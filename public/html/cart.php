@@ -83,13 +83,12 @@ if (is_array($isExist)) {
 
                 <td class="cart-item pa">
                   <table>
-
                     <tr>
                       <td><img src="<?= $row['productCover'] ?>" class="" style="width:80px" alt="" /></td>
                       <td>
                         <p class="item-name"><?= $row['productName'] ?></p>
                         <p class="small <?=$row['status']==1?'text-success':'text-info'?>"><?=$row['status']==1?'Order Placed':'Interested'?></p>
-                        <p><a class="small text-danger <?=$isExistOrder?'d-none':'d-block'?>" href="../database/remove-item.php?cart=<?= $row['cartID'] ?>">Remove Item</a></p>
+                        <p><a class="small text-danger <?=$isExistOrder && $row['status']==1?'d-none':'d-block'?>" href="../database/remove-item.php?cart=<?=$row['cartID'] ?>">Remove Item</a></p>
                       </td>
                     </tr>
                   </table>
@@ -101,7 +100,7 @@ if (is_array($isExist)) {
 
                 <td class="cart-item-quantity">
                   <!-- enable if not order otherwise disabled quantity input -->
-                    <input type="number" class="span1 quantity" <?=$isExistOrder?'disabled':'enabled'?> value="<?= $row['quantity'] ?>" />
+                    <input type="number" class="span1 quantity" <?=$isExistOrder && $row['status']==1?'disabled':'enabled'?> value="<?= $row['quantity'] ?>" />
                     <input type="hidden" class="cartId" name="cartID" value="<?= $row['cartID'] ?>">
                     <input type="hidden" class="price" name="price" value="<?= $row['price'] ?>">
                
