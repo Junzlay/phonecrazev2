@@ -153,8 +153,9 @@ if(isset($_SESSION['id'])){
 			</div>
       <div class="made-with-love">
     Made with
-    <i>♥</i> by
-    <a target="_blank" href="https://codepen.io/Junzlay">PN Group 4</a>
+    <i>♥</i>
+<!-- 	      by
+    <a target="_blank" href="https://codepen.io/Junzlay">PN Group 4</a> -->
 </div>
 		</footer>
  
